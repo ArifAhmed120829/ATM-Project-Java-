@@ -69,7 +69,7 @@ public class OptionMenu extends Account{
 		
 		switch(selection) {
 		case 1:
-			System.out.println("Saving account balance: " + mf.format());
+			System.out.println("Saving account balance: " + mf.format(getSavingBalance()));
 			getAccountType();
 			break;
 		case 2:
@@ -101,7 +101,7 @@ public class OptionMenu extends Account{
 		
 		switch(selection) {
 		case 1:
-			System.out.println("Checking account balance: " + mf.format());
+			System.out.println("Checking account balance: " + mf.format(getCheckingBalance()));
 			getAccountType();
 			break;
 		case 2:

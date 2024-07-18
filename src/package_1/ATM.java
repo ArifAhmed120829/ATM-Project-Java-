@@ -1,9 +1,13 @@
 package package_1;
 
-public class ATM {
+import java.io.IOException;
 
-	public static void main(String[] args) {
-		System.out.println("hell");
+public class ATM extends OptionMenu{
+
+	public static void main(String[] args) throws IOException {
+		OptionMenu opt = new OptionMenu();
+		opt.getLogin();
 	}
 
 }
+

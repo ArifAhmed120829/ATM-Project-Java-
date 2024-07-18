@@ -25,7 +25,75 @@ public int getCardNumer() {
 public int getPinNumber() {
 	return pinNumber;
 }
-
-
+public double getSavingBalance() {
+	return savingBalance;
+}
+public double getCheckingBalance() {
+	return checkingBalance;
+}
+public double calcCheckingWithdraw(double amount) {
+	checkingBalance = (checkingBalance - amount);
+	return checkingBalance;
+}
+public double calcSavingWithdraw(double amount) {
+	savingBalance = (savingBalance - amount);
+	return savingBalance;
+}
+public double calcCheckingDeposit(double amount) {
+	checkingBalance = (checkingBalance + amount);
+	return checkingBalance;
+}
+public double calcSavingDeposit(double amount) {
+savingBalance = (savingBalance + amount);
+	return savingBalance;
+}
+public void getCheckingWithdrawInput() {
+	System.out.println("Checking account balance: "+ mf.format(checkingBalance));
+	System.out.print("Select amount: ");
+	double amount = in.nextDouble();
+	if((checkingBalance-amount)>=0) {
+		calcCheckingWithdraw(amount);
+		System.out.println("New Checking account balance: "+mf.format(checkingBalance));
+	}
+	else {
+		System.out.println("Balance can't be negative." + "\n");
+	}
+}
+public void getsavingWithdrawInput() {
+	System.out.println("Checking account balance: "+ mf.format(savingBalance));
+	System.out.print("Select amount: ");
+	double amount = in.nextDouble();
+	if((savingBalance-amount)>=0) {
+		calcSavingWithdraw(amount);
+		System.out.println("New Checking account balance: "+mf.format(savingBalance));
+	}
+	else {
+		System.out.println("Balance can't be negative." + "\n");
+	}
+}
+public void getCheckingDepositInput() {
+	System.out.println("Checking account balance: "+ mf.format(checkingBalance));
+	System.out.print("Select amount: ");
+	double amount = in.nextDouble();
+	if((checkingBalance+amount)>=0) {
+		calcCheckingDeposit(amount);
+		System.out.println("New Checking account balance: "+mf.format(checkingBalance));
+	}
+	else {
+		System.out.println("Balance can't be negative." + "\n");
+	}
+}
+public void getsavingDepositInput() {
+	System.out.println("Checking account balance: "+ mf.format(savingBalance));
+	System.out.print("Select amount: ");
+	double amount = in.nextDouble();
+	if((savingBalance+amount)>=0) {
+		calcSavingDeposit(amount);
+		System.out.println("New Checking account balance: "+mf.format(savingBalance));
+	}
+	else {
+		System.out.println("Balance can't be negative." + "\n");
+	}
+}
 
 }
